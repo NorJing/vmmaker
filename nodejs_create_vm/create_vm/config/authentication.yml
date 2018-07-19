@@ -1,0 +1,4 @@
+---
+vcenter_address: vcenter ip
+username: vcenter username or vcenter username@domain
+vcenter_password: 'strong password'

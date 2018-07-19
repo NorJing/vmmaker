@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>VMmaker</title>
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <script src="/js/jquery.min.js"></script>
+      <script>
+         $(document).ready(function () {
+         	$('#datacenter').bind('change', function () {
+         		var elements = $('div.first-level-container').children().hide(); // hide all elements
+         		var value = $(this).val();
+         		if (value.length) { // if somethings' selected
+         			elements.filter('.' + value).show(); // show the ones we want
+         		}
+         	}).trigger('change');
+         
+         	$('.second-level-select').bind('change', function () {
+         		var elements = $('div.second-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.third-level-select').bind('change', function () {
+         		var elements = $('div.third-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.fourth-level-select').bind('change', function () {
+         		var elements = $('div.fourth-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.fifth-level-select').bind('change', function () {
+         		var elements = $('div.fifth-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.sixth-level-select').bind('change', function () {
+         		var elements = $('div.sixth-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.seventh-level-select').bind('change', function () {
+         		var elements = $('div.seventh-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	$('.eighth-level-select').bind('change', function () {
+         		var elements = $('div.eighth-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         
+         	//  $('.ninth-level-select').bind('change', function() {
+         	//    var elements = $('div.ninth-level-container').children().hide();
+         	//    var value = $(this).val();
+         	//    if (value.length) {
+         	//      elements.filter('.' + value).show();
+         	//    }
+         	//  }).trigger('change');
+         
+         	$('.tenth-level-select').bind('change', function () {
+         		var elements = $('div.tenth-level-container').children().hide();
+         		var value = $(this).val();
+         		if (value.length) {
+         			elements.filter('.' + value).show();
+         		}
+         	}).trigger('change');
+         }); 
+      </script>
+   </head>
+   <body>
+      <div class="container">
+         <fieldset>
+          insert form from create_vm.ejs
+         </fieldset>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,14 @@
+doctype html
+html
+head
+    title connect puppet master
+body
+    div(class="container")
+        fieldset
+            p #{message}
+            form(method="POST", action="/create_vm/connect_puppet_master")
+                input(type="text", name="empty" class="ghost-input" hidden)
+                input(type="submit" class="ghost-button" value="Connect puppet master")
+        fieldset
+            p vm config (debug info):
+            p #{vm_data}

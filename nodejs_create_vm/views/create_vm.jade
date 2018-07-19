@@ -1,0 +1,59 @@
+doctype html
+html
+    head
+        title Create VM
+        link(href="/css/style.css", rel="stylesheet", type="text/css")
+    body
+        div(class="container")
+            fieldset
+                form(method="POST", action="/create_vm/testenv")
+                     input(type="text", name="hostname", class="ghost-input" placeholder="hostname" required)
+                     div(class="datacenter")
+                        select(name="datacenter")
+                            option(value="", selected="Select datacenter") Select datacenter
+                            option(value="Testenv") Testenv
+                        select(name="cluster")
+                            option(value="", selected="Select cluster") Select cluster
+                            option(value="Testenv") Testenv
+                        select(name="resource_pool")
+                            option(value="", selected="Select resource pool") Select resource pool
+                            option(value="Testenv") Testenv
+                            option(value="Admin") Admin
+                        select(name="datastore")
+                            option(value="", selected="Select datastore") Select datastore
+                            option(value="datastore1") datastore1
+                            option(value="datastore2") datastore2
+                        select(name="folder")
+                            option(value="", selected="Select folder") Select folder
+                            option(value="folder1") folder1
+                            option(value="Admin") Admin
+                        select(name="template")
+                            option(value="", selected="Select template") Select template
+                            option(value="Linux1") Linux1
+                        select(name="domain")
+                            option(value="", selected="Select domain") Select domain
+                            option(value="domain1_domain2") domain1 domain2
+                        select(name="ip")
+                            option(value="", selected="Select IP") Select IP
+                            each item in ips
+                                option(value=item.value) #{item.ip}
+                        select(name="gateway")
+                            option(value="", selected="Select gateway") Select gateway
+                            option(value="10_0_0_1") 10.0.0.1
+                            option(value="10_0_0_2") 10.0.0.2
+                        select(name="networks")
+                            option(value="", selected="Select VMware networks") Select VMware networks
+                            option(value="test1") test1
+                            option(value="test2") test2
+                        select(name="puppet_environment")
+                            option(value="", selected="Select puppet environment") Select puppet environment
+                            option(value="development") development
+                            option(value="test") test
+                            option(value="preproduction") preproduction
+                        select(name="vm_environment")
+                            option(value="", selected="Select VM environment") Select VM environment
+                            option(value="development") development
+                            option(value="test") test
+                            option(value="preproduction") preproduction
+                            option(value="admin") admin
+                        input(type="submit" class="ghost-button" value="Create VM")

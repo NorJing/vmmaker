@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+  name: Clone VM
+  gather_facts: False
+  connection: local
+  vars:
+    validate_certs: False
+    vm_state: poweredon
+    # guest_id: rhel7_64Guest
+  vars_files:
+    - config/authentication.yml
+    - config/vm_config.yml
+  tasks:
+    - vmware_guest:
+        hostname: "{{ vcenter_address }}"
+        username: "{{ username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: "{{ validate_certs }}"
+        name: "{{ vm_hostname }}"
+        state: "{{ vm_state }}"
+        template: "{{ template }}"
+        # guest_id: "{{ guest_id }}"
+        datacenter: "{{ datacenter }}"
+        resource_pool: "{{ resource_pool }}"
+        folder: "{{ folder }}"
+        disk:
+        - size_gb: "{{ vm_disk_size_gb }}"
+          type: thin
+          datastore: "{{ datastore }}"
+        hardware:
+          memory_mb: "{{ vm_memory_mb }}"
+          num_cpus: "{{ vm_num_cpus }}"
+          scsi: paravirtual
+        networks:
+        - name: "{{ networks }}"
+          device_type: vmxnet3
+          type: static
+          ip: "{{ vm_ip }}"
+          netmask: "{{ vm_netmask }}"
+          gateway: "{{ vm_gateway }}"
+          domain: "{{ domain }}"
+          dns_servers:
+          - "{{ DNS1 }}"
+          - "{{ DNS2 }}"
+        wait_for_ip_address: no
+        customization:
+          dns_servers:
+          - "{{ DNS1 }}"
+          - "{{ DNS2 }}"
+          domain: "{{ domain }}"

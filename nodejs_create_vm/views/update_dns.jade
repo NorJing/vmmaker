@@ -1,0 +1,14 @@
+doctype html
+html
+head
+    title continue
+body
+    div(class="container")
+        fieldset
+            p next step: #{message}
+            form(method="POST", action="/create_vm/update_dns")
+                input(type="text", name="empty" class="ghost-input" hidden)
+                input(type="submit" class="ghost-button" value="Update dns")
+        fieldset
+            p vm config (debug info):
+            p #{vm_data}

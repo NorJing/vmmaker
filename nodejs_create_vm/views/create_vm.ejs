@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>VMmaker</title>
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <script src="/js/jquery.min.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <fieldset>
+            <form action="/create_vm/testenv" method="post">
+               <input name="hostname" type="text" class="ghost-input" placeholder="Enter a hostname" required>
+               <div class="first-level-container">
+                  <div class="datacenter">
+                     <select class="second-level-select" name="datacenter">
+                        <option value="">-Select datacenter-</option>
+                        <option value="Testenv">Testenv</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="second-level-container">
+                  <div class="cluster">
+                     <select class="third-level-select" name="cluster">
+                        <option value="">-Select cluster-</option>
+                        <option value="Testenv">Testenv</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="third-level-container">
+                  <div class="resource_pool">
+                     <select class="fourth-level-select" name="resource_pool">
+                        <option value="">-Select resource pool-</option>
+                        <option value="Testenv">Testenv</option>
+                        <option value="Admin">Admin</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="fourth-level-container">
+                  <div class="datastore">
+                     <select class="fifth-level-select" name="datastore">
+                        <option value="">-Select datastore-</option>
+                        <option value="datastore1">datastore1</option>
+                        <option value="datastore2">datastore2</option>
+                     </select>
+                  </div>
+               </div>                  
+               <div class="fifth-level-container">
+                  <div class="folder"> 
+                    <select class="sixth-level-select" name="folder">
+                        <option value="">-Select folder-</option>
+                        <option value="Testenv">Testenv</option>
+                        <option value="Admin">Admin</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="sixth-level-container">
+                  <div class="template">
+                     <select class="seventh-level-select" name="template">
+                        <option value="">-Select template-</option>
+                        <option value="Linux1">Linux1</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="seventh-level-container">
+                  <div class="domain">
+                     <select class="eighth-level-select" name="domain">
+                        <option value="">-Select domain-</option>
+                        <option value="domain1_domain2">domain1 domain2</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="eighth-level-container">
+                  <div class="ip">
+                     <select class="ninth-level-select "name="ip">
+                        <% ips.forEach(function(item){ %>
+                        <option value=<%= item.value %>><%= item.ip %></option>
+                        <% }); %>
+                     </select>
+                  </div>
+               </div>
+               <div class="ninth-level-container">
+                  <div class="gateway">
+                     <select class="tenth-level-select" name="gateway">
+                        <option value="">-Select gateway-</option>
+                        <option value="10_0_0_1">10.0.0.1</option>
+                        <option value="10_0_0_2">10.0.0.2</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="tenth-level-container">
+                  <div class="networks">
+                     <select class="eleventh-level-select" name="networks">
+                        <option value="">-Select VMware networks-</option>
+                        <option value="network1">network1</option>
+                        <option value="network2">network2</option>
+                     </select>
+                  </div>
+               </div>
+               <input type="submit" class="ghost-button" value="Create VM">
+            </form>
+         </fieldset>
+      </div>
+   </body>
+</html>

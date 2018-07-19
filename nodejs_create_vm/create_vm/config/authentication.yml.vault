@@ -1,0 +1,6 @@
+---
+vcenter_address: vcenter ip 
+username: vcenter username
+vcenter_password: !vault |
+                  $ANSIBLE_VAULT;1.1;AES256
+                  many numbers... encrypt password append here...

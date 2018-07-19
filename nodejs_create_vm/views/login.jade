@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Login
+        link(href='/css/style.css', rel='stylesheet', type='text/css')
+    body
+        div(class="container")
+            fieldset
+                form(method="POST", action="/login")
+                    input(type="text", name="username" class="ghost-input" placeholder="username" required)
+                    input(type="password", name="password" class="ghost-input" placeholder="password" required)
+                    input(type="submit" class="ghost-button" value="Login")
+
+                

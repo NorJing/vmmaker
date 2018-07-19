@@ -1,0 +1,19 @@
+drop database ips;
+create database ips;
+use ips;
+create table testenv_ips (ip varchar(25), value varchar(25));
+
+DELIMITER //
+
+CREATE PROCEDURE create_ips_table()
+  BEGIN
+    DECLARE i int DEFAULT 2;
+    WHILE i <= 253 DO
+       INSERT INTO testenv_ips (ip, value) VALUES ((select concat('10.0.0.', i)), (select concat('10_0_0_', i)));
+       SET i = i + 1;
+    END WHILE;
+  END
+//
+
+CALL create_ips_table()//
+COMMIT;

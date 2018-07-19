@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <fieldset>
+        <form action="/login" method="post">
+          <input name="username" type="text" class="ghost-input" placeholder="username" required>
+          <input name="password" type="password" class="ghost-input" placeholder="password" required>
+          <input type="submit" class="ghost-button" value="Login">
+        </form>
+        <% if (typeof loginwarning == 'string' && loginwarning !== null) { %>
+           <p>Warning=<%= loginwarning %></p>
+        <% } %>
+      </fieldset>
+    </div>
+  </body>
+</html>
