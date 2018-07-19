@@ -6,3 +6,13 @@ mariadb-libs-5.5.56-2.el7.x86_64
 mariadb-5.5.56-2.el7.x86_64
 mariadb-server-5.5.56-2.el7.x86_64
 
+# nodejs
+nodejs-6.12.3-1.el7.x86_64
+
+# ansible
+ansible-2.5.0-2.el7.noarch
+
+# Python
+Python 2.7.5
+
+# Jade
